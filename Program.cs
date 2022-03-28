@@ -148,6 +148,8 @@ namespace habit_tracker
                     Console.WriteLine("game id #" + reader["id"] + " civ: " + reader["civilization"] + ", win: " + reader["win"]);
                 }
 
+                dbConnection.Close();
+
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine();
                 Console.WriteLine();
@@ -161,7 +163,7 @@ namespace habit_tracker
                 Console.WriteLine("Enter the civilization you played");
                 string civ = Console.ReadLine().ToLower();
                 Console.WriteLine();
-                Console.WriteLine("did you win?");
+                Console.WriteLine("Win or lose?");
                 string win = Console.ReadLine().ToLower();
                 Console.WriteLine();
 
@@ -181,6 +183,7 @@ namespace habit_tracker
                 string sql = "INSERT INTO aoe2_tracker (civilization, win) VALUES ('" + civ + "', '" + win + "')";
                 SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
+                dbConnection.Close();
 
                 Console.WriteLine("Game logged successfully");
                 Console.WriteLine();
@@ -244,6 +247,7 @@ namespace habit_tracker
 
                 SQLiteCommand query = new SQLiteCommand("UPDATE aoe2_tracker SET civilization='"+civ+"', win='"+win+"' WHERE id='"+id+"'", dbConnection);
                 query.ExecuteNonQuery();
+                dbConnection.Close();
 
                 Console.WriteLine("Game updated successfully");
                 Console.WriteLine();
@@ -293,6 +297,7 @@ namespace habit_tracker
 
                 SQLiteCommand command = new SQLiteCommand(sql, dbConnection);
                 command.ExecuteNonQuery();
+                dbConnection.Close();
 
                 Console.WriteLine("Game deleted successfully");
                 Console.WriteLine("-----------------------------------------");
