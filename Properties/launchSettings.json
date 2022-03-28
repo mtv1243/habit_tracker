@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "habit_tracker": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\mtv12\\Desktop\\GA_JS_Class\\Csharp_academy\\habit_tracker\\habit_tracker"
+    }
+  }
+}
