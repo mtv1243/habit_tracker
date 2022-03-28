@@ -53,6 +53,7 @@ namespace habit_tracker
             {
                 while (true)
                 {
+
                     WriteMenu();
 
                     int userInput = GetInput(Console.ReadLine());
@@ -161,6 +162,10 @@ namespace habit_tracker
                 SQLiteConnection dbConnection = new SQLiteConnection("Data Source=habit_tracker.sqlite;Version=3");
                 dbConnection.Open();
                 Console.WriteLine("Enter the civilization you played");
+                Console.WriteLine(".");
+                Console.WriteLine(".");
+                PrintCivilizations();
+                Console.WriteLine(".");
                 string civ = Console.ReadLine().ToLower();
                 Console.WriteLine();
                 Console.WriteLine("Win or lose?");
@@ -200,8 +205,14 @@ namespace habit_tracker
                 string id;
                 string civ;
                 string win;
-                
-                while(true)
+
+                Console.WriteLine(".");
+                Console.WriteLine(".");
+                Console.WriteLine("List of Civs:");
+                PrintCivilizations();
+                Console.WriteLine(".");
+
+                while (true)
                 {
                     Console.WriteLine("Enter the number of the game would you like to update.");
                     id = Console.ReadLine();
@@ -303,6 +314,23 @@ namespace habit_tracker
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine();
 
+            }
+
+            void PrintCivilizations()
+            {
+                Console.WriteLine("List of possible civilizations");
+                for( int i=0; i<Civilizations.Length; i++ )
+                {
+                    if(i+1 > Civilizations.Length)
+                    {
+                        Console.Write(Civilizations[i]);
+                    }
+                    else
+                    {
+                        Console.Write(Civilizations[i] + ", ");
+
+                    }
+                }
             }
         }
     }
