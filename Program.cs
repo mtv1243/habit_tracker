@@ -165,10 +165,11 @@ namespace habit_tracker
                 Console.WriteLine(".");
                 Console.WriteLine(".");
                 PrintCivilizations();
+                Console.WriteLine();
                 Console.WriteLine(".");
                 string civ = Console.ReadLine().ToLower();
                 Console.WriteLine();
-                Console.WriteLine("Win or lose?");
+                Console.WriteLine("Did you win?");
                 string win = Console.ReadLine().ToLower();
                 Console.WriteLine();
 
@@ -210,6 +211,7 @@ namespace habit_tracker
                 Console.WriteLine(".");
                 Console.WriteLine("List of Civs:");
                 PrintCivilizations();
+                Console.WriteLine();
                 Console.WriteLine(".");
 
                 while (true)
@@ -237,7 +239,7 @@ namespace habit_tracker
                 
                 while(true)
                 {
-                    Console.WriteLine("Enter the civ name you played as.");
+                    Console.WriteLine("Enter the civ you played as.");
                     civ = Console.ReadLine();
                     Console.WriteLine();
 
@@ -252,7 +254,7 @@ namespace habit_tracker
                 }
                 
 
-                Console.WriteLine("Win or Lose?");
+                Console.WriteLine("Did you win?");
                 win = Console.ReadLine();
                 Console.WriteLine();
 
